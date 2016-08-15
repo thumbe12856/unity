@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Animation Control  with Survival_v3.CSharp", "Animation Control  with Survival_v3.CSharp.csproj", "{BA41E74D-73C6-8BD5-E0C6-B9B2A9761128}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Animation Control  with Survival_v3.CSharp.Editor", "Animation Control  with Survival_v3.CSharp.Editor.csproj", "{8822A901-2D1A-4DC1-0340-434EAA832D9B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA41E74D-73C6-8BD5-E0C6-B9B2A9761128}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA41E74D-73C6-8BD5-E0C6-B9B2A9761128}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA41E74D-73C6-8BD5-E0C6-B9B2A9761128}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA41E74D-73C6-8BD5-E0C6-B9B2A9761128}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8822A901-2D1A-4DC1-0340-434EAA832D9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8822A901-2D1A-4DC1-0340-434EAA832D9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8822A901-2D1A-4DC1-0340-434EAA832D9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8822A901-2D1A-4DC1-0340-434EAA832D9B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

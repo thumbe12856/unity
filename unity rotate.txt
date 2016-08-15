@@ -1,0 +1,19 @@
+
+        //turn right or left
+        if (Input.GetAxis("Mouse X") < 0) swit = 1;
+        else if(Input.GetAxis("Mouse X") > 0) swit = -1;
+
+        //count angle
+        float x = Input.GetAxis("Mouse X") * 30;
+        nowX = nowX + x;
+        toRotation = Quaternion.Euler(0, nowX, 0);
+        angle = swit * Quaternion.Angle(fromRotation, Quaternion.Lerp(fromRotation, toRotation, 1));
+
+        //count new moveHorizontal/moveVertical vector
+        float rad = Mathf.PI * angle / 180;
+        float newMoveHx = Mathf.Cos(rad) * moveHorizontal;
+        float newMoveHy = Mathf.Sin(rad) * moveHorizontal;
+        rad = Mathf.PI * (90 + angle) / 180;
+        float newMoveVx = Mathf.Cos(rad) * moveVertical;
+        float newMoveVy = Mathf.Sin(rad) * moveVertical;
+        //movement = new Vector3(newMoveHx + newMoveVx, 0.0f, newMoveHy + newMoveVy);

@@ -4,10 +4,15 @@
 *Textures*
 *Models*
 *Animations*
-*.meta
 *Lightmaps*
 *asset
 *Complete*
 *Temp*
+*resources*
+
+*.meta
+*.asset*
+*.tga*
+*.png
 
 *autogen

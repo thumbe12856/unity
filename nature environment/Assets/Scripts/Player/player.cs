@@ -66,8 +66,8 @@ public class player : MonoBehaviour {
         anim.SetBool("run", run);
         anim.SetBool("jump", jump);
 
-        float moveX = inputH * 10F * Time.deltaTime * 4f;
-        float moveZ = inputV * 10F * Time.deltaTime * 4f;
+        float moveX = inputH * 20F * Time.deltaTime * 4f;
+        float moveZ = inputV * 20F * Time.deltaTime * 4f;
         
         if(run)
         {
@@ -78,31 +78,39 @@ public class player : MonoBehaviour {
         PlayerMovement(moveX, moveZ);
     }
 
+    public float smooth = 2.0F;
+    public float tiltAngle = 0.0F;
+    public float speed = 3F;
     void PlayerMovement(float moveX, float moveZ)
     {
         //move
-        Vector3 moveDirection = new Vector3(0, 0, Mathf.Abs(moveX + moveZ));
+        Vector3 moveDirection = new Vector3(0, 0, speed);
 
         if (moveX > 0.1)
         {
-            transform.eulerAngles = new Vector3(0, 90, 0);
-            rb.transform.Translate(moveDirection * Time.deltaTime);
+            Quaternion target = Quaternion.Euler(0, 90, 0);
+            transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * smooth);
+            //rb.transform.Translate(moveDirection * Time.deltaTime);
         }
         else if (moveX < -0.1)
         {
-            transform.eulerAngles = new Vector3(0, -90, 0);
-            rb.transform.Translate(moveDirection * Time.deltaTime);
+            Quaternion target = Quaternion.Euler(0, 270, 0);
+            transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * smooth);
+            //rb.transform.Translate(moveDirection * Time.deltaTime);
         }
 
         if (moveZ > 0.1)
         {
-            transform.eulerAngles = new Vector3(0, 0, 0);
-            rb.transform.Translate(moveDirection * Time.deltaTime);
+            Quaternion target = Quaternion.Euler(0, 0, 0);
+            transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * smooth);
+            //rb.transform.Translate(moveDirection * Time.deltaTime);
         }
         else if (moveZ < -0.1)
         {
-            transform.eulerAngles = new Vector3(0, 180, 0);
-            rb.transform.Translate(moveDirection * Time.deltaTime);
+            Quaternion target = Quaternion.Euler(0, 180, 0);
+            transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * smooth);
+            //rb.transform.Translate(moveDirection * Time.deltaTime);
         }
+        rb.transform.Translate(moveDirection * Time.deltaTime);
     }
 }
